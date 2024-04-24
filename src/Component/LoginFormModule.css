@@ -1,50 +1,104 @@
-/* Style for the form container */
+/* Center the login form */
 .login-form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.login-form {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  animation: scaleIn 0.5s ease forwards;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
-  
-  /* Style for the form */
-  .login-form {
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Style for form labels */
-  .login-form label {
-    margin-bottom: 5px;
-    font-weight: bold;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
   }
-  
-  /* Style for form inputs */
-  .login-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+  to {
+    transform: scale(1);
   }
-  
-  /* Style for submit button */
-  .login-form button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Hover effect for submit button */
-  .login-form button:hover {
+}
+
+/* Other styles remain unchanged */
+.login-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
     background-color: #0056b3;
   }
-  
+}
+
+/* Light and dark mode styles remain unchanged */
+.login-form-container.light-mode {
+  background-color: #f9f9f9;
+  color: black;
+
+  .login-form {
+    background-color: #f9f9f9;
+
+    label {
+      color: black;
+    }
+
+    input {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+.login-form-container.dark-mode {
+  background-color: black;
+  color: white;
+
+  .login-form {
+    background-color: black;
+
+    label {
+      color: white;
+    }
+
+    input {
+      background-color: black;
+      color: white;
+    }
+  }
+}

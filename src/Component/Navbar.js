@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import LoginForm from "./LoginForm";
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [showLoginForm, setShowLoginForm] = useState(false);
 
   const toggleLoginForm = () => {
@@ -11,8 +11,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className="navbar bg-dark border-bottom border-body"
-        data-bs-theme="dark"
+        className={`navbar navbar-expand-lg  navbar-${props.mode} bg-${props.mode}`}
       >
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
@@ -80,6 +79,13 @@ export default function Navbar() {
                 </ul>
               </li>
             </ul>
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              onClick={props.theamMode}
+            >
+              DarkMode
+            </button>
 
             <form className="d-flex" role="search">
               <input

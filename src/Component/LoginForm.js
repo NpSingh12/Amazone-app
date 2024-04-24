@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./LoginFormModule.css";
 
-export default function LoginForm() {
+export default function LoginForm(props) {
   const submitemail = () => {
     console.log(email);
     console.log(password);
@@ -17,7 +17,11 @@ export default function LoginForm() {
   const [password, setpassword] = useState("");
 
   return (
-    <div className="login-form-container">
+    <div
+      className={`login-form-container ${
+        props.mode === "dark" ? "dark-mode" : ""
+      }`}
+    >
       <form className="login-form">
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1">Email address</label>
